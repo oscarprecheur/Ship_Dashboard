@@ -1,7 +1,6 @@
 <RCC>
     <qresource prefix="/">
         <file>main.qml</file>
-        <file>Aiguille_boussole.png</file>
         <file>Visu/Boussole/aiguille.svg</file>
         <file>Visu/Boussole/cadran.svg</file>
         <file>Visu/Fond.svg</file>
