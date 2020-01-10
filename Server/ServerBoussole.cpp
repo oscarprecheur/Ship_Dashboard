@@ -65,7 +65,7 @@ float ServerBoussole::getNextValue() //Return valeur capteur exploitable
     updatecpt();
 
     return 180*sin(cpt/10) ;
-
+   // return 90;
 
 
     //return (float)2;//a remplacer
