@@ -9,10 +9,10 @@ int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
 
-    ServerBoussole serverBoussole(65432) ;
+    ServerBoussole serverBoussole(65431) ;
     //ServerGPS GPS(65433);
     ServerAccelero serverAccelero(65434);
-    ServerDirVent serverDirVent(65435);
+    ServerDirVent serverVitVent(65435);
     //ServerVitVent VitVent(65436);
 
 

@@ -17,18 +17,8 @@ int main(int argc, char *argv[])
 
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
     QApplication a(argc, argv);
-    valcapt w;
 
 
-
-
-
-
-//     qDebug()<<receiverBoussole.transmit();
-//     qDebug()<<receiverGPS.transmit();
-//     qDebug()<<receiverAccelero.transmit();
-//     qDebug()<<receiverDirVent.transmit();
-//     qDebug()<<receiverVitVent.transmit();
 
 
 

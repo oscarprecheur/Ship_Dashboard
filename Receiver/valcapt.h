@@ -1,36 +1,6 @@
 #ifndef VALCAPT_H
 #define VALCAPT_H
 
-//#include <QMainWindow>
-//#include <QObject>
-//#include <QtWidgets>
-//#include <QPushButton>
-//#include "socketdatareceiver.h"
-//#include <QSvgWidget>
-//#include <QGraphicsScene>
-//#include "mainwindow.h"
-
-//class valcapt : public MainWindow
-//{
-//    Q_OBJECT
-
-//    Q_PROPERTY(float valGPS READ valGPS)
-//    Q_PROPERTY(float valBoussole READ valBoussole)
-//    Q_PROPERTY(float valAccelero  READ valAccelero)
-//    Q_PROPERTY(float valDirVent  READ valDirVent)
-//    Q_PROPERTY(float valVitVent READ valVitVent)
-//public:
-//    explicit valcapt(QObject *parent = nullptr);
-
-//private:
-//    float valGPS();
-//    float valBoussole();
-//    float valAccelero();
-//    float valDirVent();
-//    float valVitVent();
-
-//};
-
 #include <QMainWindow>
 #include <QObject>
 #include <QtWidgets>
@@ -39,18 +9,22 @@
 #include <QSvgWidget>
 #include <QGraphicsScene>
 
-
-
 class valcapt:public QObject
 {
     Q_OBJECT
 
     Q_PROPERTY(float getvalBoussole READ getvalBoussole )
-    Q_PROPERTY(float getvalGPS READ getvalGPS )
-    Q_PROPERTY(float getvalVitVent READ getvalVitVent )
-    Q_PROPERTY(float getvalDirVent READ getvalDirVent )
+    Q_PROPERTY(float getvalGPS_Lat READ getvalGPS_Lat )
+    Q_PROPERTY(float getvalGPS_Lon READ getvalGPS_Lon )
+    Q_PROPERTY(float getvalTime READ getvalTime )
     Q_PROPERTY(float getvalAccelero READ getvalAccelero )
 
+    // 1) ----- ajout capteur : Q_PROPERTY(float get<nom_val_nouv_capt> READ <getnom_val_nouv_capt> ) -----
+
+    //Q_PROPERTY(float getvalCapt_Supp_1 READ getvalCapt_Supp_1 ) //A décommenter si utilisé
+    //Q_PROPERTY(float getvalCapt_Supp_2 READ getvalCapt_Supp_2 ) //A décommenter si utilisé
+
+    //-----
 
 
 
@@ -58,43 +32,62 @@ public:
     valcapt(QObject *parent = nullptr);
 
 
-    float getvalGPS();
+    float getvalGPS_Lat();
+    float getvalGPS_Lon();
+    float getvalTime();
     float getvalBoussole();
-    float getvalVitVent();
-    float getvalDirVent();
     float getvalAccelero();
 
+    // 2) ----- ajout capteur : float get<nom_val_nouv_capt>(); -----
+
+    //float getvalCapt_Supp_1(); //A décommenter si utilisé
+    //float getvalCapt_Supp_2(); //A décommenter si utilisé
+
+    //-----
+
 public slots:
-   void updateGPS();
+   void updateGPS_Lat();
+   void updateGPS_Lon();
+   void updateTime();
    void updateBoussole();
-//   {
-//       valBoussole=receiverBoussole.readyRead();
-//       emit valBoussoleChanged();
-//       qDebug()<<",ioa"<<valBoussole;
-//   }
-   void updateVitVent();
-   void updateDirVent();
    void updateAccelero();
 
+   // 3) ----- ajout capteur : void update<nom_val_nouv_capt>(); -----
+
+   //void updateCapt_Supp_1(); //A décommenter si utilisé
+   //void updateCapt_Supp_2(); //A décommenter si utilisé
+
+   //-----
 
 
 
 private:
    SocketDataReceiver receiverBoussole;//(65432 ) ;
-   SocketDataReceiver receiverGPS;//(65433) ;
+   SocketDataReceiver receiverGPS_Lat;//(65431) ;
+   SocketDataReceiver receiverGPS_Lon;
+   SocketDataReceiver receiverTime;
    SocketDataReceiver receiverAccelero;//(65434) ;
-   SocketDataReceiver receiverDirVent;//(65435) ;
-   SocketDataReceiver receiverVitVent;//(65436) ;
 
-   float valGPS;
+   // 4) ----- ajout capteur : void receiver<nom_val_nouv_capt>(); -----
+
+   //SocketDataReceiver receiverCapt_Supp_1; //A décommenter si utilisé (65435) ;
+   //SocketDataReceiver receiverCapt_Supp_2; //A décommenter si utilisé (65436) ;
+
+   //-----
+
+
+   float valGPS_Lat;
+   float valGPS_Lon;
+   float valTime;
    float valBoussole;
-   float valVitVent;
-   float valDirVent;
    float valAccelero;
 
+   // 5) ----- ajout capteur : val<nom_val_nouv_capt>; -----
 
+   //float valCapt_Supp_1; //A décommenter si utilisé
+   //float valCapt_Supp_2; //A décommenter si utilisé
 
-
+   //-----
 
 };
 
