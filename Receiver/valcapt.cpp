@@ -16,9 +16,9 @@ valcapt::valcapt(QObject *parent)
 
     //<<<<<<<<<<<<<<<<<<Connexion aux serveurs>>>>>>>>>>>>>>>>>>>
 
-    receiverBoussole.Connexion(65432);//connexion d'un capteur (boussole) sur le port 65432
+    receiverBoussole.Connexion(65431);//connexion d'un capteur (boussole) sur le port 65432
     receiverAccelero.Connexion(65434);//connexion d'un capteur (accelerometre lateral) sur le port 65434
-    receiverGPS_Lat.Connexion(65431);
+    receiverGPS_Lat.Connexion(65432);
     receiverGPS_Lon.Connexion(65433);
     receiverTime.Connexion(65435);
 

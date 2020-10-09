@@ -25,9 +25,9 @@ int main(int argc, char *argv[])
 
     QQmlApplicationEngine engine;
 
-    qmlRegisterType<valcapt>("VAL.CAPT",1,0,"VALCAPT");
+    qmlRegisterType<valcapt>("VAL.CAPT",1,0,"VALCAPT");//creation du registre valcapt (donnée capteur C++ -> QML)
 
-    const QUrl url(QStringLiteral("qrc:/main.qml"));
+    const QUrl url(QStringLiteral("qrc:/main.qml"));//appel du programme QML d'affichage
     QObject::connect(&engine, &QQmlApplicationEngine::objectCreated,
                      &a, [url](QObject *obj, const QUrl &objUrl) {
         if (!obj && url == objUrl)
@@ -35,7 +35,7 @@ int main(int argc, char *argv[])
     }, Qt::QueuedConnection);
     engine.load(url);
 
-    return a.exec();
+    return a.exec();//exectution de l'application
 
 
 

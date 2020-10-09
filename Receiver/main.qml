@@ -13,7 +13,6 @@ ApplicationWindow{
     id: applicationWindow
     visible: true
     //visibility: "Maximized"
-
     title: qsTr("Dashboard_v1")
 
 

@@ -37,6 +37,7 @@ float SocketDataReceiver::transmit()
 {
 
     connect(_socket, SIGNAL(readyRead()), this, SLOT(readyRead()));
+    return NULL;
 
 }
 
