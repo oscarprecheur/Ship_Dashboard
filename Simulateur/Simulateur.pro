@@ -14,7 +14,8 @@ SOURCES += \
         ServerDirVent.cpp \
         ServerGPS.cpp \
         ServerVitVent.cpp \
-        main.cpp
+        main.cpp \
+
 
 
 HEADERS += \
@@ -22,4 +23,5 @@ HEADERS += \
     ServerBoussole.h \
     ServerDirVent.h \
     ServerGPS.h \
-    ServerVitVent.h
+    ServerVitVent.h \
+

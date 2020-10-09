@@ -1,9 +1,9 @@
 #include <QCoreApplication>
 #include "ServerBoussole.h"
 #include "ServerGPS.h"
-#include "serveraccelero.h"
-#include "serverdirvent.h"
-#include "servervitvent.h"
+#include "ServerAccelero.h"
+#include "ServerDirVent.h"
+#include "ServerVitVent.h"
 
 int main(int argc, char *argv[])
 {

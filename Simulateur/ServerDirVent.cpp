@@ -3,7 +3,6 @@
 #include<cmath>
 
 
-
 ServerDirVent::ServerDirVent(quint16 port, QObject *parent):QObject(parent)
 {
     _server = new QTcpServer(this);
